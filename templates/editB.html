@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit booking</title>
+
+<script type = "text/javascript">
+            function fun()
+            {
+
+
+               alert ("Appointment Updated  successfully");
+            }
+
+
+</script>
+
+<style>
+     html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+label{
+    color: #03e9f4;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
+}
+
+
+
+button {
+  background-color: #03e9f4;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+
+  opacity: 0.9;
+}
+button:hover {
+opacity: 1;
+}
+
+
+</style>
+
+</head>
+<body>
+<div class="login-box" >
+    <h2 class="word">Update</h2>
+<form method="POST" action="">
+    <div class="user-box">
+        <input type="text" name="booking_id" value="{{row.0}}" required/>
+        <label>booking  id</label>
+    </div>
+    <div class="user-box">
+        <input type="text" name="patient_id" value="{{row.1}}" required/>
+        <label>patient id</label>
+    </div>
+     <div class="user-box">
+        <select  id="slot" name="slot"  value="{{row.2}}" required>
+        <option selected>Slot</option>
+        <option value="morning">Morning</option>
+        <option value="evening">Evening</option>
+        </select>
+    </div>
+    <div class="user-box">
+        <input type="text" name="date"  value="{{row.3}}" required />
+        <label>date</label>
+    </div>
+    <div class="user-box">
+        <input type="text" name="disease"  value="{{row.4}}" required />
+        <label>disease</label>
+    </div>
+
+    <div class="user-box">
+        <select  id="dept_id" name="dept_id"  value="{{row[5]}}" required>
+        <option selected>dept_id</option>
+        <option value="DD01">DD01</option>
+        <option value="DD02">DD02</option>
+        <option value="DD03">DD03</option>
+        <option value="DD04">DD04</option>
+        <option value="DD05">DD05</option>
+        <option value="DD06">DD06</option>
+        <option value="DD07">DD07</option>
+        <option value="DD08">DD08</option>
+        <option value="DD09">DD09</option>
+        </select>
+    </div>
+    <button type="submit" onclick="fun()" >
+        update
+    </button>
+
+</form>
+</div>
+</body>
+</html>
